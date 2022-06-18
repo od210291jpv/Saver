@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Saver.ViewModels"             
+             x:Class="Saver.Views.SettingsPage">
+
+    <ContentPage.BindingContext>
+        <vm:SettingsViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+            <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
+                <Frame BorderColor="Gold" CornerRadius="15" HasShadow="False" HorizontalOptions="FillAndExpand" WidthRequest="100" Padding="5" Margin="5" BackgroundColor="Black">
+                    <Grid Margin="5" Padding="5" BackgroundColor="Black">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" TextColor="Gold" Text="Add Content Item:" FontAttributes="Bold"/>
+                        <Entry Grid.Row="1" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" Placeholder="Name" Text="{Binding ContentTitle}"/>
+                        <Entry Grid.Row="2" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" Placeholder="Uri" Text="{Binding ContentUri}"/>
+                        <Picker BackgroundColor="Black" Grid.Row="3" Grid.ColumnSpan="2" TextColor="Gold" Title="Select Category:" TitleColor="Gold" ItemsSource="{Binding Categories}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedCategory}">
+
+                        </Picker>
+                        <Button Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="Black" TextColor="Gold" Text="Submit New Content" BorderColor="Gold" BorderWidth="1" CornerRadius="15" Command="{Binding AddContentCommand}"/>
+
+                        <Label Grid.Row="5" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" TextColor="Gold" Text="Add Category:" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                        <Entry Grid.Row="6" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" TextColor="Gold" Placeholder="Category Name" Text="{Binding NewCategoryName, Mode=TwoWay}"/>
+                        <Button Grid.Row="7" Grid.ColumnSpan="2" BackgroundColor="Black" TextColor="Gold" Text="Submit New Category" BorderColor="Gold" BorderWidth="1" CornerRadius="15" Command="{Binding AddCategoryCommand}" CommandParameter="{Binding NewCategoryName}"/>
+                    </Grid>
+                </Frame>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
