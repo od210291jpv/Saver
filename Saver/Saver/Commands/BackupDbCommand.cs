@@ -1,7 +1,12 @@
 ﻿using Realms;
+using Saver.Models;
 using System;
+using System.IO;
+using System.Linq;
+using System.Text;
 using System.Windows.Input;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace Saver.Commands
 {
@@ -17,6 +22,32 @@ namespace Saver.Commands
         public async void Execute(object parameter)
         {
             var result = await FilePicker.PickAsync();
+
+            if (result != null) 
+            {
+                Realm _realm = Realm.GetInstance();
+                Content[] allRelatedContent = _realm.All<Content>().ToArray();
+                Category[] allRelatedCategories = _realm.All<Category>().ToArray();
+
+                string sb = "";
+
+                foreach (Category cat in allRelatedCategories)
+                {
+                    var filteredContent = allRelatedContent.Where(c => c.CategoryId.Equals(cat.CategoryId)).ToArray();
+
+                    sb += $"{cat.Name}\r\n";
+                    foreach (var c in filteredContent) 
+                    {
+                        sb += $"{c.ImageUri}\r\n";
+                    }
+                }
+
+                File.WriteAllText(result.FullPath, sb);
+            }
+            else 
+            {
+                await Application.Current.MainPage.DisplayAlert("Error!", $"Please select path to an empty backup file!", "Ok");
+            }
         }
     }
 }

@@ -102,6 +102,17 @@ namespace Saver.ViewModels
             } 
         }
 
+        private EraseEmptyCategoriesCommand eraseEmptyCategoriesCommand;
+
+        public EraseEmptyCategoriesCommand EraseEmptyCategoriesCommand 
+        {
+            get 
+            { 
+                return eraseEmptyCategoriesCommand ??
+                    (eraseEmptyCategoriesCommand = new EraseEmptyCategoriesCommand()); 
+            }
+        }
+
         public SettingsViewModel()
         {
             this.Categories = new ObservableCollection<Category>();

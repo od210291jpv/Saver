@@ -33,5 +33,6 @@
         <ShellContent Title="Settings" Icon="icon_about.png" Route="Settings" ContentTemplate="{DataTemplate local:SettingsPage}" />
         <ShellContent Title="Categories" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:CategoriesPage}" />
         <ShellContent Title="Feed" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:FeedPage}" />
+        <ShellContent Title="Favorites" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:FavoritesPage}" />
     </TabBar>
 </Shell>

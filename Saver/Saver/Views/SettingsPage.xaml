@@ -54,6 +54,7 @@
                         <Label Grid.Row="9" Grid.Column="1" Text="{Binding ContentAmount}" HorizontalTextAlignment="Center" TextColor="Gold" FontAttributes="Bold" VerticalTextAlignment="Center"/>
 
                         <Button Grid.Row="10" Grid.ColumnSpan="2" BackgroundColor="Black" TextColor="Gold" Text="Backup DB" FontAttributes="Bold" BorderColor="Gray" BorderWidth="1" CornerRadius="15" Command="{Binding BackupDbCommand}" />
+                        <Button Grid.Row="11" Grid.ColumnSpan="2" BackgroundColor="Black" TextColor="Gold" Text="Erase Empty Categories" FontAttributes="Bold" BorderColor="Gray" BorderWidth="1" CornerRadius="15" Command="{Binding EraseEmptyCategoriesCommand}" />
                     </Grid>
                 </Frame>
             </ScrollView>
