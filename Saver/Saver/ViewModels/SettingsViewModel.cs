@@ -2,6 +2,7 @@
 using Saver.Commands;
 using Saver.Models;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace Saver.ViewModels
 {
@@ -16,6 +17,23 @@ namespace Saver.ViewModels
             get => newCategoryName;
             set { this.newCategoryName = value; OnPropertyChanged("NewCategoryName"); }
         }
+
+        private int contentAmount;
+
+        public int ContentAmount 
+        { 
+            get => contentAmount;
+            set { this.contentAmount = value; OnPropertyChanged("ContentAmount"); }
+        }
+
+        private int categoriesAmount;
+
+        public int CategoriesAmount 
+        { 
+            get => categoriesAmount;
+            set { this.categoriesAmount = value; OnPropertyChanged("CategoriesAmount"); } 
+        }
+
 
         private Category selectedCategory;
 
@@ -40,8 +58,8 @@ namespace Saver.ViewModels
             set { contentUri = value; OnPropertyChanged("ContentUri"); }
         }
 
-
         private AddCategoryCommand addCategoryCommand;
+
         public AddCategoryCommand AddCategoryCommand
         {
             get
@@ -74,6 +92,15 @@ namespace Saver.ViewModels
             }
         }
 
+        private BackupDbCommand backupDbCommand;
+
+        public BackupDbCommand BackupDbCommand 
+        { 
+            get 
+            { return backupDbCommand ??
+                    (backupDbCommand = new BackupDbCommand()); 
+            } 
+        }
 
         public SettingsViewModel()
         {
@@ -87,6 +114,9 @@ namespace Saver.ViewModels
             {
                 Categories.Add(cat);
             }
+
+            this.CategoriesAmount = allCategories.ToArray().Length;
+            this.ContentAmount = _realm.All<Content>().ToArray().Length;
         }
     }
 }

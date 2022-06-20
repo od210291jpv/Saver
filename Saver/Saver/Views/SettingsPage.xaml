@@ -46,6 +46,14 @@
                         <Label Grid.Row="5" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" TextColor="Gold" Text="Add Category:" FontAttributes="Bold" VerticalTextAlignment="Center"/>
                         <Entry Grid.Row="6" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" TextColor="Gold" Placeholder="Category Name" Text="{Binding NewCategoryName, Mode=TwoWay}"/>
                         <Button Grid.Row="7" Grid.ColumnSpan="2" BackgroundColor="Black" TextColor="Gold" Text="Submit New Category" BorderColor="Gold" BorderWidth="1" CornerRadius="15" Command="{Binding AddCategoryCommand}" CommandParameter="{Binding NewCategoryName}"/>
+
+                        <Label Grid.Row="8" Grid.Column="0" Text="Categories now:" HorizontalTextAlignment="Start" TextColor="Gold" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                        <Label Grid.Row="8" Grid.Column="1" Text="{Binding CategoriesAmount}" HorizontalTextAlignment="Center" TextColor="Gold" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+
+                        <Label Grid.Row="9" Grid.Column="0" Text="Content amt:" HorizontalTextAlignment="Start" TextColor="Gold" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                        <Label Grid.Row="9" Grid.Column="1" Text="{Binding ContentAmount}" HorizontalTextAlignment="Center" TextColor="Gold" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+
+                        <Button Grid.Row="10" Grid.ColumnSpan="2" BackgroundColor="Black" TextColor="Gold" Text="Backup DB" FontAttributes="Bold" BorderColor="Gray" BorderWidth="1" CornerRadius="15" Command="{Binding BackupDbCommand}" />
                     </Grid>
                 </Frame>
             </ScrollView>

@@ -17,7 +17,8 @@ namespace Saver.Views
         public CategoryFeedPage(Category category)
         {
             InitializeComponent();
-        }
 
+            this.Title = category.Name;
+        }
     }
 }

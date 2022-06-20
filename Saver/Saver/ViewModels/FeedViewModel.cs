@@ -1,10 +1,7 @@
 ﻿using Realms;
 using Saver.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 
 namespace Saver.ViewModels
 {
@@ -20,7 +17,7 @@ namespace Saver.ViewModels
             Realm _realm = Realm.GetInstance();
             Content[] allRelatedContent = _realm.All<Content>().ToArray();
 
-            foreach (var cat in allRelatedContent.ToArray())
+            foreach (var cat in allRelatedContent.ToArray().Reverse())
             {
                 ContentCollection.Add(cat);
             }
