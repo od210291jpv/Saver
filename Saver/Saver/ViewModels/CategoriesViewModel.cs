@@ -4,6 +4,8 @@ using Saver.Models;
 using Saver.Views;
 using System;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -26,14 +28,26 @@ namespace Saver.ViewModels
             }
         }
 
-        public ICommand NavigateToFeedItemCommand
+        private NavigateToPageCommand navigateToFeedItemCommand;
+
+        public NavigateToPageCommand NavigateToFeedItemCommand
+        {
+            get
+            {
+                return navigateToFeedItemCommand ??
+                    (navigateToFeedItemCommand = new NavigateToPageCommand(this));
+            }
+        }
+
+        public ICommand AddFavoriteCategoryCmd 
         {
             get;
         }
 
         public CategoriesViewModel()
         {
-            this.NavigateToFeedItemCommand = new NavigateToPageCommand(this);
+
+            this.AddFavoriteCategoryCmd = new AddFavoriteCategoryCommand(this);
 
             this.Categories = new ObservableCollection<Category>();
 
@@ -43,6 +57,16 @@ namespace Saver.ViewModels
             foreach (var cat in allCategories)
             {
                 Categories.Add(cat);
+            }
+
+            this.PropertyChanged += OnCurrentCategoryChanged;
+        }
+
+        public void OnCurrentCategoryChanged(object sender, PropertyChangedEventArgs e) 
+        {
+            if (e.PropertyName.Equals(nameof(this.SelectedCategory))) 
+            {
+                Environment.SahredData.currentCategory = this.SelectedCategory;
             }
         }
     }

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +10,12 @@ namespace Saver.Views
         public CategoriesPage()
         {
             InitializeComponent();
+
+            this.Appearing += OnPageAppearing;
+        }
+
+        private async void OnPageAppearing(object sender, EventArgs e)
+        {            
         }
     }
 }

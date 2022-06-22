@@ -20,7 +20,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Row="0" Grid.Column="0" Text="Categories" HorizontalOptions="FillAndExpand" HeightRequest="200" BorderColor="Gold" BorderWidth="1" CornerRadius="15" Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="0" Text="Categories" HorizontalOptions="FillAndExpand" HeightRequest="200" BorderColor="Gold" BorderWidth="1" CornerRadius="15" Margin="5" Command="{Binding NavigateToFavoriteCategoriesCommand}"/>
                 <Button Grid.Row="0" Grid.Column="1" Text="Content" HorizontalOptions="FillAndExpand" HeightRequest="200" BorderColor="Gold" BorderWidth="1" CornerRadius="15" Margin="5"/>
 
             </Grid>

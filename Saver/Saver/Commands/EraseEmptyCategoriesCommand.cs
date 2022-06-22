@@ -24,7 +24,7 @@ namespace Saver.Commands
             var categoriesToDelete = allRelatedCategories.Where(c => allRelatedContent.Count(rc => rc.CategoryId.Equals(c.CategoryId)) == 0).ToArray();
             if (categoriesToDelete.Length > 0)
             {
-                bool answer = await Application.Current.MainPage.DisplayAlert("Caution", $"Would you nike to delete {categoriesToDelete.Length} categories?", "Yes", "No");
+                bool answer = await Application.Current.MainPage.DisplayAlert("Caution", $"Would you like to delete {categoriesToDelete.Length} categories?", "Yes", "No");
 
                 if (answer == true)
                 {
