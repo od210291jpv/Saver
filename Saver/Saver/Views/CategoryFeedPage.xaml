@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Saver.ViewModels"
+             xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage"
              x:Class="Saver.Views.CategoryFeedPage">
 
     <ContentPage.BindingContext>
@@ -13,7 +14,11 @@
             <CarouselView x:Name="Feed" ItemsSource="{Binding ContentCollection}" IndicatorView="indicatorView">
                 <CarouselView.ItemTemplate>
                         <DataTemplate>
+                        <pinch:PinchZoom>
+                            <pinch:PinchZoom.Content>
                                 <Image Source="{Binding Path=ImageUri}" Margin="0"/>
+                            </pinch:PinchZoom.Content>
+                        </pinch:PinchZoom>
                         </DataTemplate>
                     </CarouselView.ItemTemplate>
                 </CarouselView>
