@@ -8,6 +8,18 @@ namespace Saver.ViewModels
 {
     public class SettingsViewModel : BaseViewModel
     {
+        private string hostIpAddress;
+
+        public string HostIpAddress
+        {
+            get { return hostIpAddress; }
+            set
+            {
+                hostIpAddress = value;
+                OnPropertyChanged("HostIpAddress");
+            }
+        }
+
         public ObservableCollection<Category> Categories { get; set; }
 
         private string newCategoryName;
@@ -110,6 +122,17 @@ namespace Saver.ViewModels
             { 
                 return eraseEmptyCategoriesCommand ??
                     (eraseEmptyCategoriesCommand = new EraseEmptyCategoriesCommand()); 
+            }
+        }
+
+        private SyncAllContentCommand syncContextCommand;
+
+        public SyncAllContentCommand SyncContextCommand 
+        {
+            get 
+            {
+                return this.syncContextCommand ??
+                    (syncContextCommand = new SyncAllContentCommand(this));
             }
         }
 

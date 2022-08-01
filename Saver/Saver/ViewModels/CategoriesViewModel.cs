@@ -1,14 +1,11 @@
 ﻿using Realms;
+
 using Saver.Commands;
 using Saver.Models;
-using Saver.Views;
-using System;
+
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace Saver.ViewModels
 {

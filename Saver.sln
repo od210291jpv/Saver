@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saver.Android", "Saver\Saver.Android\Saver.Android.csproj", "{BA906694-4401-4F33-949B-50FE3DD32987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saver", "Saver\Saver\Saver.csproj", "{B1125B79-8411-422A-8360-3180217495CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saver", "Saver\Saver\Saver.csproj", "{B1125B79-8411-422A-8360-3180217495CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaverBackend", "SaverBackend\SaverBackend.csproj", "{2FAEB58E-6F2B-441D-8FF4-8DE4AD20D767}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{B1125B79-8411-422A-8360-3180217495CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1125B79-8411-422A-8360-3180217495CC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B1125B79-8411-422A-8360-3180217495CC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2FAEB58E-6F2B-441D-8FF4-8DE4AD20D767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FAEB58E-6F2B-441D-8FF4-8DE4AD20D767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FAEB58E-6F2B-441D-8FF4-8DE4AD20D767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FAEB58E-6F2B-441D-8FF4-8DE4AD20D767}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
