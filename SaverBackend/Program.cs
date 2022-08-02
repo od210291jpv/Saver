@@ -14,11 +14,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSignalR();
 
-
 builder.Services.AddDbContext<ApplicationContext>(options =>
     options.UseMySql(
-            ConnectionString,
-            ServerVersion.AutoDetect(ConnectionString)
+            SaverBackend.Models.ApplicationContext.ConnectionString,
+            ServerVersion.AutoDetect(ApplicationContext.ConnectionString)
         ));
 
 //builder.Services.AddMvc().AddNewtonsoftJson();
