@@ -15,7 +15,7 @@ namespace SaverBackend.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=mobilesdb;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=192.168.0.101;Database=mobilesdb;Uid=root@localhost;Pwd=password;");
         }
     }
 }

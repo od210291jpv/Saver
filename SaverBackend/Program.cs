@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using SaverBackend.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +15,10 @@ builder.Services.AddSignalR();
 
 
 builder.Services.AddDbContext<ApplicationContext>(options =>
-    options.UseSqlServer(@"Server=(localdb)\\mssqllocaldb;Database=mobilesdb;Trusted_Connection=True;"));
+    options.UseMySql(
+            "Server=192.168.0.101;Database=mobilesdb;Uid=root@localhost;Pwd=password;",
+            ServerVersion.AutoDetect("Server=192.168.0.101;Database=mobilesdb;Uid=root@localhost;Pwd=password;")
+        ));
 
 //builder.Services.AddMvc().AddNewtonsoftJson();
 builder.Services.AddControllers().AddNewtonsoftJson();
