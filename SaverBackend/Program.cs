@@ -5,6 +5,7 @@ using SaverBackend.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -16,8 +17,8 @@ builder.Services.AddSignalR();
 
 builder.Services.AddDbContext<ApplicationContext>(options =>
     options.UseMySql(
-            "Server=192.168.0.101;Database=mobilesdb;Uid=root@localhost;Pwd=password;",
-            ServerVersion.AutoDetect("Server=192.168.0.101;Database=mobilesdb;Uid=root@localhost;Pwd=password;")
+            ConnectionString,
+            ServerVersion.AutoDetect(ConnectionString)
         ));
 
 //builder.Services.AddMvc().AddNewtonsoftJson();

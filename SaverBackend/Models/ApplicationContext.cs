@@ -4,6 +4,8 @@ namespace SaverBackend.Models
 {
     public class ApplicationContext : DbContext
     {
+        public static string ConnectionString = "Database=mobilesdb;Uid=root;Pwd=password;";
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<Content> Contents { get; set; }
 
@@ -15,7 +17,7 @@ namespace SaverBackend.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=192.168.0.101;Database=mobilesdb;Uid=root@localhost;Pwd=password;");
+            optionsBuilder.UseSqlServer(ConnectionString);
         }
     }
 }
