@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using SaverBackend.Hubs;
 using SaverBackend.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,5 +36,6 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<MainNotificationsHub>("/notify");
 
 app.Run();
