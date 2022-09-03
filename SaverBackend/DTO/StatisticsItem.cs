@@ -12,6 +12,5 @@ namespace SaverBackend.DTO
 
         [JsonProperty("favorites")]
         public int? Favorites { get; set; }
-
     }
 }

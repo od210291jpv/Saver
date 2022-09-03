@@ -31,7 +31,15 @@ namespace SaverBackend.Controllers
             requestedCategory.AmountOfOpenings = dtoData.Openings;
 
             await this.db.SaveChangesAsync();
-            return Ok(requestedCategory);
+
+            return Ok(
+                new CategoryDto() 
+                {
+                    CategoryId = requestedCategory.CategoryId,
+                    Name = requestedCategory.Name,
+                    AmountOfFavorites = requestedCategory.AmountOfFavorites,
+                    AmountOfOpenings = requestedCategory.AmountOfOpenings 
+                });
         }
     }
 }
