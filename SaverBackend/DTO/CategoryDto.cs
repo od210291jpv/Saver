@@ -9,5 +9,9 @@ namespace SaverBackend.DTO
 
         [JsonProperty("categoryId")]
         public Guid CategoryId { get; set; }
+
+        public int? AmountOfOpenings { get; set; }
+
+        public int? AmountOfFavorites { get; set; }
     }
 }

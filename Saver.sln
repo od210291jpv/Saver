@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saver", "Saver\Saver\Saver.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaverBackend", "SaverBackend\SaverBackend.csproj", "{2FAEB58E-6F2B-441D-8FF4-8DE4AD20D767}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalApiParserWorker", "ExternalApiParserWorker\ExternalApiParserWorker.csproj", "{11825E51-EB46-4BA8-BB40-1C7205804E08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{2FAEB58E-6F2B-441D-8FF4-8DE4AD20D767}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FAEB58E-6F2B-441D-8FF4-8DE4AD20D767}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FAEB58E-6F2B-441D-8FF4-8DE4AD20D767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11825E51-EB46-4BA8-BB40-1C7205804E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11825E51-EB46-4BA8-BB40-1C7205804E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11825E51-EB46-4BA8-BB40-1C7205804E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11825E51-EB46-4BA8-BB40-1C7205804E08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

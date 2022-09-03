@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+
 using SaverBackend.DTO;
 using SaverBackend.Hubs;
 using SaverBackend.Models;
@@ -28,10 +29,12 @@ namespace SaverBackend.Controllers
                 {
                     if (db.Categories.Where(c => c.CategoryId == category.CategoryId).Count() == 0) 
                     {
-                        this.db.Categories.Add(new Category()
+                        await this.db.Categories.AddAsync(new Category()
                         {
                             CategoryId = category.CategoryId,
                             Name = category.Name,
+                            AmountOfOpenings = category.AmountOfOpenings,
+                            AmountOfFavorites = category.AmountOfFavorites,
                         });
                     }
                 }
@@ -40,7 +43,7 @@ namespace SaverBackend.Controllers
                 {
                     if (this.db.Contents.Where(ct => ct.ImageUri == content.ImageUri && ct.CategoryId == content.CategoryId).Count() == 0) 
                     {
-                        db.Contents.Add(new Models.Content()
+                        await db.Contents.AddAsync(new Models.Content()
                         {
                             CategoryId = content.CategoryId,
                             ImageUri = content.ImageUri,
